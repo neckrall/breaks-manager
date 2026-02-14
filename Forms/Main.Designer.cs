@@ -33,12 +33,15 @@
             dataGridView = new DataGridView();
             copyrightPanel = new Panel();
             copyrightLabel = new Label();
+            employeesControl = new GroupBox();
+            btnAddEmployee = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
             splitContainer.Panel1.SuspendLayout();
             splitContainer.Panel2.SuspendLayout();
             splitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             copyrightPanel.SuspendLayout();
+            employeesControl.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer
@@ -56,6 +59,7 @@
             // 
             // splitContainer.Panel2
             // 
+            splitContainer.Panel2.Controls.Add(employeesControl);
             splitContainer.Panel2.Controls.Add(copyrightPanel);
             splitContainer.Size = new Size(1129, 626);
             splitContainer.SplitterDistance = 897;
@@ -63,6 +67,7 @@
             // 
             // dataGridView
             // 
+            dataGridView.AutoGenerateColumns = false;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.AllowUserToDeleteRows = false;
             dataGridView.BackgroundColor = Color.White;
@@ -74,6 +79,25 @@
             dataGridView.ReadOnly = true;
             dataGridView.Size = new Size(893, 622);
             dataGridView.TabIndex = 0;
+            dataGridView.MultiSelect = false;
+            dataGridView.RowHeadersVisible = false;
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle
+            {
+                BackColor = Color.Black,
+                ForeColor = Color.White,
+            };
+            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dataGridView.GridColor = Color.FromArgb(235, 235, 235);
+            dataGridView.AdvancedCellBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.Single;
+            dataGridView.AdvancedCellBorderStyle.Right = DataGridViewAdvancedCellBorderStyle.None;
+            dataGridView.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.Single;
+            dataGridView.AdvancedCellBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
+            dataGridView.AllowUserToResizeRows = false;
+            dataGridView.AllowUserToResizeColumns = false;
+
+            dataGridView.RowTemplate.Height = 26;
             // 
             // copyrightPanel
             // 
@@ -96,6 +120,26 @@
             copyrightLabel.TabIndex = 0;
             copyrightLabel.Text = "© Данил Ларькин, 2026 | v1.0";
             // 
+            // employeesControl
+            // 
+            employeesControl.Controls.Add(btnAddEmployee);
+            employeesControl.Location = new Point(10, 10);
+            employeesControl.Name = "employeesControl";
+            employeesControl.Size = new Size(204, 56);
+            employeesControl.TabIndex = 1;
+            employeesControl.TabStop = false;
+            employeesControl.Text = "Работа с сотрудниками";
+            // 
+            // btnAddEmployee
+            // 
+            btnAddEmployee.Location = new Point(6, 22);
+            btnAddEmployee.Name = "btnAddEmployee";
+            btnAddEmployee.Size = new Size(192, 23);
+            btnAddEmployee.TabIndex = 2;
+            btnAddEmployee.Text = "Добавить сотрудника";
+            btnAddEmployee.UseVisualStyleBackColor = true;
+            btnAddEmployee.Click += btnAddEmployee_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -116,6 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             copyrightPanel.ResumeLayout(false);
             copyrightPanel.PerformLayout();
+            employeesControl.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -125,5 +170,7 @@
         private Label copyrightLabel;
         private Panel copyrightPanel;
         private DataGridView dataGridView;
+        private GroupBox employeesControl;
+        private Button btnAddEmployee;
     }
 }
